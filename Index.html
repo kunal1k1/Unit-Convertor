@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unit Converter</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <h1>Unit Converter</h1>
+  <p>Select a category to get started</p>
+
+  <div class="buttons">
+    <button onclick="location.href='length.html'"><span>Length</span></button>
+    <button onclick="location.href='mass.html'"><span>Mass</span></button>
+    <button onclick="location.href='volume.html'"><span>Volume</span></button>
+    <button onclick="location.href='temperature.html'"><span>Temperature</span></button>
+    <button onclick="location.href='time.html'"><span>Time</span></button>
+    <button onclick="location.href='speed.html'"><span>Speed</span></button>
+  </div>
+
+  <script>
+    const syncPointer = ({ x: pointerX, y: pointerY }) => {
+      const x = pointerX.toFixed(2);
+      const y = pointerY.toFixed(2);
+      const xp = (pointerX / window.innerWidth).toFixed(2);
+      const yp = (pointerY / window.innerHeight).toFixed(2);
+      document.documentElement.style.setProperty('--x', x);
+      document.documentElement.style.setProperty('--xp', xp);
+      document.documentElement.style.setProperty('--y', y);
+      document.documentElement.style.setProperty('--yp', yp);
+    }
+    document.body.addEventListener('pointermove', syncPointer);
+  </script>
+
+</body>
+</html>
